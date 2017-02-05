@@ -1,3 +1,6 @@
+// TypeScript also requires a configuration for its compiler so that it will generate JavaScript code that works in Angular applications. 
+// I created a file called tsconfig.json
+
 {
   "compilerOptions": {
     "target": "es5",

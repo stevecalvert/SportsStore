@@ -1,3 +1,13 @@
+// I will be using the TypeScript compiler to generate the JavaScript files that will be executed by the browser.
+// I will use type annotations throughout the SportsStore project because they help make the code easier to understand and 
+// make some Angular features easier to use.
+// The TypeScript compiler relies on type definition files to provide it with type information for JavaScript libraries that are not written in TypeScript. 
+// Run the following commands in the SportsStore folder to download and install the type definition files required for this project:
+// npm run typings -- install dt~core-js --save –global
+// npm run typings -- install dt~node --save --global
+// The typings package will get the latest type information for the Core-JS and Node packages and save them in a folder called typings. 
+// It will also generate a file called typings.json
+
 {
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.9.7+20161130133742",

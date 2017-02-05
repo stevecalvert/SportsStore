@@ -13,6 +13,11 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="rxjs.module.min.js"></script>
     <script src="systemjs.config.js"></script>
+
+    <!-- update the HTML document so that the JavaScript module loader will load the bootstrap file and execute it to start Angular and the SportsStore application -->
+    <script>
+		System.import("app/main").catch(function(err){ console.error(err); });
+	</script>
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css"
         rel="stylesheet" />
     <link href="node_modules/font-awesome/css/font-awesome.min.css"
