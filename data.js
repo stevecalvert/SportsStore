@@ -1,3 +1,7 @@
+// I included json-server in the project’s package.json file, which is an excellent package for quickly creating web services from JSON data or JavaScript code. 
+// To ensure that there is a fixed state that the project can be reset to, I am going to take advantage of the feature that allows the RESTful web service to be 
+// provided with data using JavaScript code, which means that restarting the web service will reset the application data. I created a file called data.js
+
 module.exports = function () {
     return {
         products: [

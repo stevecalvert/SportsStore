@@ -1,7 +1,5 @@
-/* The @NgModule decorator configures the module, using the imports property to tell Angular that the store module depends on the model 
-module as well as BrowserModule and FormsModule, which contain the standard Angular features for web applications and working with HTML form elements. 
-The decorator uses the declarations property to tell Angular about the StoreComponent class, which the exports property tells Angular can be also 
-be used in other parts of the application, which is important because it will be used by the root module. 
+/* The @NgModule decorator configures the module, using the imports property to tell Angular that the store module depends on the model module as well as BrowserModule and FormsModule, which contain the standard Angular features for web applications and working with HTML form elements.
+The decorator uses the declarations property to tell Angular about the StoreComponent class, which the exports property tells Angular can be also be used in other parts of the application, which is important because it will be used by the root module.
 */
 
 import { NgModule } from "@angular/core";

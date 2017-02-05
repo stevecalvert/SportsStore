@@ -1,3 +1,5 @@
+// To prepare the SystemJS module loader, I added a file called systemjs.config.js
+
 (function (global) {
     var paths = {
         "@angular/*": "node_modules/@angular/*"

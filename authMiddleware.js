@@ -1,3 +1,6 @@
+// The data stored by the RESTful web service needs to be protected so that ordinary users can’t modify the products or change the status or orders. 
+// The json-server package doesn’t include any built-in authentication features, so I created a file called authMiddleware.js
+
 const jwt = require("jsonwebtoken");
 const APP_SECRET = "myappsecret";
 const USERNAME = "admin";
