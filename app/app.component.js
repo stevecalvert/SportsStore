@@ -11,12 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+// This is an example of a decorator, which provides metadata about a class. This is the @Component decorator, and, as its name suggests, it tells Angular that this is a component. The decorator provides configuration information through its properties, which in the case of @Component includes properties called selector and templateUrl.
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
+            // The selector property specifies a CSS selector that matches the HTML element to which the component will be applied
+            // When an Angular application starts, Angular scans the HTML in the current document and looks for elements that correspond to components. It will find the app element and know that it should be placed under the control of this component.
             selector: "app",
+            // the templateUrl property is used to tell Angular how to find the component’s template. The store element replaces the previous content in the root component’s template and corresponds to the value of the selector property of the @Component decorator 
             template: "<store></store>"
         }), 
         __metadata('design:paramtypes', [])
