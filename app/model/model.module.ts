@@ -11,6 +11,7 @@ import { Order } from "./order.model";
 import { OrderRepository } from "./order.repository";
 import { RestDataSource } from "./rest.datasource";
 import { HttpModule } from "@angular/http";
+import { AuthService } from "./auth.service";
 
 @NgModule({
 	imports: [HttpModule],
@@ -18,7 +19,8 @@ import { HttpModule } from "@angular/http";
 	// The change to the providers property tells Angular that when it needs to create an instance of a 
 	// class with a StaticDataSource constructor parameter, it should use a RestDataSource instead.
     providers: [ProductRepository, Cart, Order, OrderRepository,
-        { provide: StaticDataSource, useClass: RestDataSource } ]
+        { provide: StaticDataSource, useClass: RestDataSource },
+        RestDataSource, AuthService]
 })
 
 export class ModelModule { }
