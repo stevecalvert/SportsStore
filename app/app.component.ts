@@ -9,8 +9,8 @@ import { Component } from "@angular/core";
 	// When an Angular application starts, Angular scans the HTML in the current document and looks for elements that correspond to components. It will find the app element and know that it should be placed under the control of this component.
     selector: "app",
     
-    // the templateUrl property is used to tell Angular how to find the component’s template. The store element replaces the previous content in the root component’s template and corresponds to the value of the selector property of the @Component decorator 
-    template: "<store></store>"
+    // the templateUrl property is used to tell Angular how to find the component’s template. 
+    template: "<router-outlet></router-outlet>"
   
 	/* no longer required 
 	template: `<div class="bg-success p-a-1 text-xs-center">

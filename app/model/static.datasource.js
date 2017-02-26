@@ -14,7 +14,9 @@ var core_1 = require("@angular/core");
 var product_model_1 = require("./product.model");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/observable/from");
-/* The @Injectable decorator has been applied to the StaticDataSource class. This decorator is used to tell Angular that this class will be used as a service, which allows other classes to access its functionality through a feature called dependency injection
+/* The @Injectable decorator has been applied to the StaticDataSource class.
+This decorator is used to tell Angular that this class will be used as a service, which allows other classes
+to access its functionality through a feature called dependency injection
 */
 var StaticDataSource = (function () {
     function StaticDataSource() {

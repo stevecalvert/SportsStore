@@ -6,7 +6,9 @@ import { Product } from "./product.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
 
-/* The @Injectable decorator has been applied to the StaticDataSource class. This decorator is used to tell Angular that this class will be used as a service, which allows other classes to access its functionality through a feature called dependency injection
+/* The @Injectable decorator has been applied to the StaticDataSource class. 
+This decorator is used to tell Angular that this class will be used as a service, which allows other classes 
+to access its functionality through a feature called dependency injection
 */
 
 @Injectable()

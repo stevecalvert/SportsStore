@@ -20,8 +20,8 @@ var AppComponent = (function () {
             // The selector property specifies a CSS selector that matches the HTML element to which the component will be applied
             // When an Angular application starts, Angular scans the HTML in the current document and looks for elements that correspond to components. It will find the app element and know that it should be placed under the control of this component.
             selector: "app",
-            // the templateUrl property is used to tell Angular how to find the component’s template. The store element replaces the previous content in the root component’s template and corresponds to the value of the selector property of the @Component decorator 
-            template: "<store></store>"
+            // the templateUrl property is used to tell Angular how to find the component’s template. 
+            template: "<router-outlet></router-outlet>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

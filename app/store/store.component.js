@@ -10,13 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var product_repository_1 = require("../model/product.repository");
-/*import { Cart } from "../model/cart.model";*/
-// The @Component decorator has been applied to the StoreComponent class, which tells Angular that it is a component. The decorator’s properties tell Angular how to apply the component to HTML content (using an element called store) and how to find the component’s template (in a file called store.component.html).
+var cart_model_1 = require("../model/cart.model");
+var router_1 = require("@angular/router");
+// The @Component decorator has been applied to the StoreComponent class, which tells Angular that it is a component. 
+// The decorator’s properties tell Angular how to apply the component to HTML content (using an element called store) 
+// and how to find the component’s template (in a file called store.component.html).
 // The StoreComponent class provides the logic that will support the template content.
 var StoreComponent = (function () {
     // The class constructor receives a ProductRepository object as an argument, provided through the dependency injection feature
-    function StoreComponent(repository) {
+    function StoreComponent(repository, cart, router) {
         this.repository = repository;
+        this.cart = cart;
+        this.router = router;
         this.selectedCategory = null;
         this.productsPerPage = 4;
         this.selectedPage = 1;
@@ -47,20 +52,25 @@ var StoreComponent = (function () {
         this.productsPerPage = Number(newSize);
         this.changePage(1);
     };
-    Object.defineProperty(StoreComponent.prototype, "pageNumbers", {
+    Object.defineProperty(StoreComponent.prototype, "pageCount", {
         get: function () {
-            return Array(Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage)).fill(0).map(function (x, i) { return i + 1; });
+            return Math.ceil(this.repository
+                .getProducts(this.selectedCategory).length / this.productsPerPage);
         },
         enumerable: true,
         configurable: true
     });
+    StoreComponent.prototype.addProductToCart = function (product) {
+        this.cart.addLine(product);
+        this.router.navigateByUrl("/cart");
+    };
     StoreComponent = __decorate([
         core_1.Component({
             selector: "store",
             moduleId: module.id,
             templateUrl: "store.component.html"
         }), 
-        __metadata('design:paramtypes', [product_repository_1.ProductRepository])
+        __metadata('design:paramtypes', [product_repository_1.ProductRepository, cart_model_1.Cart, router_1.Router])
     ], StoreComponent);
     return StoreComponent;
 }());
