@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
+import { Order } from "./order.model";
 
 /* The @Injectable decorator has been applied to the StaticDataSource class. 
 This decorator is used to tell Angular that this class will be used as a service, which allows other classes 
@@ -43,4 +44,9 @@ export class StaticDataSource {
     getProducts(): Observable<Product[]> {
         return Observable.from([this.products]);
 	} 
+
+    saveOrder(order: Order): Observable<Order> {
+        console.log(JSON.stringify(order));
+        return Observable.from([order]);
+    }
 }
