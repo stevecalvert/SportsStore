@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Observable_1 = require("rxjs/Observable");
-var order_model_1 = require("./order.model");
 var rest_datasource_1 = require("./rest.datasource");
 var OrderRepository = (function () {
     function OrderRepository(dataSource) {
@@ -23,31 +21,28 @@ var OrderRepository = (function () {
         this.loaded = true;
         this.dataSource.getOrders()
             .subscribe(function (orders) { return _this.orders = orders; });
-        getOrders();
-        order_model_1.Order[];
-        {
-            if (!this.loaded) {
-                this.loadOrders();
-            }
-            return this.orders;
+    };
+    OrderRepository.prototype.getOrders = function () {
+        if (!this.loaded) {
+            this.loadOrders();
         }
-        saveOrder(order, order_model_1.Order);
-        Observable_1.Observable < order_model_1.Order > {
-            return: this.dataSource.saveOrder(order)
-        };
-        updateOrder(order, order_model_1.Order);
-        {
-            this.dataSource.updateOrder(order).subscribe(function (order) {
-                _this.orders.splice(_this.orders.
-                    findIndex(function (o) { return o.id == order.id; }), 1, order);
-            });
-        }
-        deleteOrder(id, number);
-        {
-            this.dataSource.deleteOrder(id).subscribe(function (order) {
-                _this.orders.splice(_this.orders.findIndex(function (o) { return id == o.id; }));
-            });
-        }
+        return this.orders;
+    };
+    OrderRepository.prototype.saveOrder = function (order) {
+        return this.dataSource.saveOrder(order);
+    };
+    OrderRepository.prototype.updateOrder = function (order) {
+        var _this = this;
+        this.dataSource.updateOrder(order).subscribe(function (order) {
+            _this.orders.splice(_this.orders.
+                findIndex(function (o) { return o.id == order.id; }), 1, order);
+        });
+    };
+    OrderRepository.prototype.deleteOrder = function (id) {
+        var _this = this;
+        this.dataSource.deleteOrder(id).subscribe(function (order) {
+            _this.orders.splice(_this.orders.findIndex(function (o) { return id == o.id; }));
+        });
     };
     OrderRepository = __decorate([
         core_1.Injectable(), 

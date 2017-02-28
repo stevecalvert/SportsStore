@@ -15,9 +15,21 @@ var router_1 = require("@angular/router");
 var auth_component_1 = require("./auth.component");
 var admin_component_1 = require("./admin.component");
 var auth_guard_1 = require("./auth.guard");
+var productTable_component_1 = require("./productTable.component");
+var productEditor_component_1 = require("./productEditor.component");
+var orderTable_component_1 = require("./orderTable.component");
 var routing = router_1.RouterModule.forChild([
     { path: "auth", component: auth_component_1.AuthComponent },
-    { path: "main", component: admin_component_1.AdminComponent, canActivate: [auth_guard_1.AuthGuard] },
+    {
+        path: "main", component: admin_component_1.AdminComponent, canActivate: [auth_guard_1.AuthGuard],
+        children: [
+            { path: "products/:mode/:id", component: productEditor_component_1.ProductEditorComponent },
+            { path: "products/:mode", component: productEditor_component_1.ProductEditorComponent },
+            { path: "products", component: productTable_component_1.ProductTableComponent },
+            { path: "orders", component: orderTable_component_1.OrderTableComponent },
+            { path: "**", redirectTo: "products" }
+        ]
+    },
     { path: "**", redirectTo: "auth" }
 ]);
 var AdminModule = (function () {
@@ -27,7 +39,7 @@ var AdminModule = (function () {
         core_1.NgModule({
             imports: [common_1.CommonModule, forms_1.FormsModule, routing],
             providers: [auth_guard_1.AuthGuard],
-            declarations: [auth_component_1.AuthComponent, admin_component_1.AdminComponent]
+            declarations: [auth_component_1.AuthComponent, admin_component_1.AdminComponent, productTable_component_1.ProductTableComponent, productEditor_component_1.ProductEditorComponent, orderTable_component_1.OrderTableComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AdminModule);

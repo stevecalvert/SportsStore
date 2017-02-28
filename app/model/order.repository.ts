@@ -14,6 +14,7 @@ export class OrderRepository {
         this.loaded = true;
         this.dataSource.getOrders()
             .subscribe(orders => this.orders = orders);
+    }
 	
     getOrders(): Order[] {
     	if (!this.loaded) {
