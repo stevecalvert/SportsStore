@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var OrderTableComponent = (function () {
-    function OrderTableComponent() {
+var ProductEditorComponent = (function () {
+    function ProductEditorComponent() {
     }
-    OrderTableComponent = __decorate([
+    ProductEditorComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"bg-primary p-a-1\">\n                <h3>Order Table Placeholder</h3>\n              </div>"
+            template: "<div class=\"bg-primary p-a-1\">\n                <h3>Product Editor  Placeholder</h3>\n              </div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], OrderTableComponent);
-    return OrderTableComponent;
+    ], ProductEditorComponent);
+    return ProductEditorComponent;
 }());
-exports.OrderTableComponent = OrderTableComponent;
+exports.ProductEditorComponent = ProductEditorComponent;
